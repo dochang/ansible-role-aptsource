@@ -1,6 +1,8 @@
 Aptsource
 =========
 
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-dochang.aptsource-blue.svg)](https://galaxy.ansible.com/dochang/aptsource/)
+
 An ansible role to configure Debian APT sources.
 
 Requirements
