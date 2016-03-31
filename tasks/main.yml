@@ -1,0 +1,12 @@
+---
+- name: configure APT sources
+  template:
+    dest: /etc/apt/sources.list
+    src: etc/apt/sources.list
+    group: root
+    owner: root
+    mode: '644'
+  notify:
+    - update apt cache
+
+- meta: flush_handlers
