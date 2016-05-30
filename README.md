@@ -46,7 +46,7 @@ Example Playbook
 License
 -------
 
-[MIT](http://dochang.mit-license.org/)
+[MIT](https://dochang.mit-license.org/)
 
 Author Information
 ------------------
