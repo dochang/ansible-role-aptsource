@@ -1,5 +1,6 @@
 ---
 aptsource_uri: 'http://httpredir.debian.org/debian'
+aptsource_sources_enabled: no
 aptsource_security_uri: 'http://security.debian.org/'
 aptsource_stable_updates_enabled: yes
 aptsource_stable_updates_uri: 'http://httpredir.debian.org/debian'

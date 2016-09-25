@@ -1,6 +1,9 @@
 # https://wiki.debian.org/SourcesList
 
 deb {{ aptsource_uri }} {{ aptsource_suite }} {{ aptsource_components | join(" ") }}
+{% if aptsource_sources_enabled | bool %}
+deb-src {{ aptsource_uri }} {{ aptsource_suite }} {{ aptsource_components | join(" ") }}
+{% endif %}
 {% if aptsource_suite not in ('sid', 'unstable') %}
 {% if aptsource_stable_updates_enabled | bool %}
 
@@ -8,13 +11,22 @@ deb {{ aptsource_uri }} {{ aptsource_suite }} {{ aptsource_components | join(" "
 #
 # {{ aptsource_suite }}-updates, previously known as 'volatile'
 deb {{ aptsource_stable_updates_uri }} {{ aptsource_suite }}-updates {{ aptsource_components | join(" ") }}
+{% if aptsource_sources_enabled | bool %}
+deb-src {{ aptsource_stable_updates_uri }} {{ aptsource_suite }}-updates {{ aptsource_components | join(" ") }}
+{% endif %}
 {% endif %}
 {% if aptsource_backports_enabled | bool %}
 
 # http://backports.debian.org/
 deb {{ aptsource_backports_uri }} {{ aptsource_suite }}-backports {{ aptsource_components | join(" ") }}
+{% if aptsource_sources_enabled | bool %}
+deb-src {{ aptsource_backports_uri }} {{ aptsource_suite }}-backports {{ aptsource_components | join(" ") }}
+{% endif %}
 {% endif %}
 
 # https://www.debian.org/security/
 deb {{ aptsource_security_uri }} {{ aptsource_suite }}/updates {{ aptsource_components | join(" ") }}
+{% if aptsource_sources_enabled | bool %}
+deb-src {{ aptsource_security_uri }} {{ aptsource_suite }}/updates {{ aptsource_components | join(" ") }}
+{% endif %}
 {% endif %}
