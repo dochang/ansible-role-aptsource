@@ -15,6 +15,7 @@ Role Variables
 --------------
 
   - `aptsource_uri` (default: `http://httpredir.debian.org/debian`)
+  - `aptsource_sources_enabled` (default: `no`)
   - `aptsource_security_uri` (default: `http://security.debian.org/`)
   - `aptsource_stable_updates_enabled` (default: `yes`)
   - `aptsource_stable_updates_uri` (default: `http://httpredir.debian.org/debian`)
