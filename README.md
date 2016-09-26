@@ -3,6 +3,8 @@ Aptsource
 
 [![Build Status](https://travis-ci.org/dochang/ansible-role-aptsource.svg?branch=master)](https://travis-ci.org/dochang/ansible-role-aptsource)
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-dochang.aptsource-blue.svg)](https://galaxy.ansible.com/dochang/aptsource/)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/dochang/ansible-role-aptsource.svg)](http://isitmaintained.com/project/dochang/ansible-role-aptsource "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/dochang/ansible-role-aptsource.svg)](http://isitmaintained.com/project/dochang/ansible-role-aptsource "Percentage of issues still open")
 
 An ansible role to configure Debian APT sources.
 
