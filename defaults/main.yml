@@ -3,9 +3,9 @@ aptsource_uri: 'http://deb.debian.org/debian'
 aptsource_sources_enabled: no
 aptsource_security_uri: 'http://deb.debian.org/debian-security'
 aptsource_stable_updates_enabled: yes
-aptsource_stable_updates_uri: 'http://deb.debian.org/debian'
+aptsource_stable_updates_uri: '{{ aptsource_uri }}'
 aptsource_backports_enabled: no
-aptsource_backports_uri: 'http://deb.debian.org/debian'
+aptsource_backports_uri: '{{ aptsource_uri }}'
 aptsource_suite: '{{ (ansible_distribution_release != "NA") | ternary(ansible_distribution_release, "sid") }}'
 aptsource_components:
   - main
