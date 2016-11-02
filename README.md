@@ -16,13 +16,13 @@ None
 Role Variables
 --------------
 
-  - `aptsource_uri` (default: `http://httpredir.debian.org/debian`)
+  - `aptsource_uri` (default: `http://deb.debian.org/debian`)
   - `aptsource_sources_enabled` (default: `no`)
-  - `aptsource_security_uri` (default: `http://security.debian.org/`)
+  - `aptsource_security_uri` (default: `http://deb.debian.org/debian-security`)
   - `aptsource_stable_updates_enabled` (default: `yes`)
-  - `aptsource_stable_updates_uri` (default: `http://httpredir.debian.org/debian`)
+  - `aptsource_stable_updates_uri` (default: `http://deb.debian.org/debian`)
   - `aptsource_backports_enabled`: (default: `no`)
-  - `aptsource_backports_uri` (default: `http://httpredir.debian.org/debian`)
+  - `aptsource_backports_uri` (default: `http://deb.debian.org/debian`)
   - `aptsource_suite` (default: `{{ (ansible_distribution_release != "NA") | ternary(ansible_distribution_release, "sid") }}`)
   - `aptsource_components` (default: `[ main, contrib, non-free ]`)
 
@@ -37,9 +37,9 @@ Example Playbook
     - hosts: servers
       roles:
         - role: dochang.aptsource
-          aptsource_uri: http://httpredir.debian.org/debian
+          aptsource_uri: http://deb.debian.org/debian
           aptsource_backports_enabled: yes
-          aptsource_backports_enabled: http://httpredir.debian.org/debian
+          aptsource_backports_enabled: http://deb.debian.org/debian
           aptsource_suite: sid
           aptsource_components:
             - main
