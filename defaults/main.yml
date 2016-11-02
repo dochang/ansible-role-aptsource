@@ -8,6 +8,10 @@ aptsource_backports_enabled: no
 aptsource_backports_uri: '{{ aptsource_uri }}'
 aptsource_debug_enabled: no
 aptsource_debug_uri: 'http://deb.debian.org/debian-debug'
+aptsource_ports_enabled: no
+aptsource_ports_uri: 'http://deb.debian.org/debian-ports'
+aptsource_ports_suite: '{{ aptsource_suite }}'
+# Can also be `unreleased`.
 aptsource_suite: '{{ (ansible_distribution_release != "NA") | ternary(ansible_distribution_release, "sid") }}'
 aptsource_components:
   - main

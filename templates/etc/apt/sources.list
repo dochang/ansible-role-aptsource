@@ -10,6 +10,11 @@ deb-src {{ aptsource_uri }} {{ aptsource_suite }} {{ aptsource_components | join
 # https://wiki.debian.org/DebugPackage
 deb {{ aptsource_debug_uri }} {{ aptsource_suite }}-debug {{ aptsource_components | join(" ") }}
 {% endif %}
+{% if aptsource_ports_enabled | bool %}
+
+# https://www.ports.debian.org/
+deb {{ aptsource_ports_uri }} {{ aptsource_ports_suite }} {{ aptsource_components | join(" ") }}
+{% endif %}
 {% if aptsource_suite not in ('sid', 'unstable') %}
 {% if aptsource_stable_updates_enabled | bool %}
 
