@@ -23,6 +23,8 @@ Role Variables
   - `aptsource_stable_updates_uri` (default: `{{ aptsource_uri }}`)
   - `aptsource_backports_enabled` (default: `no`)
   - `aptsource_backports_uri` (default: `{{ aptsource_uri }}`)
+  - `aptsource_debug_enabled` (default: `no`)
+  - `aptsource_debug_uri` (default: `http://deb.debian.org/debian-debug`)
   - `aptsource_suite` (default: `{{ (ansible_distribution_release != "NA") | ternary(ansible_distribution_release, "sid") }}`)
   - `aptsource_components` (default: `[ main, contrib, non-free ]`)
 

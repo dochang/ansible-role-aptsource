@@ -4,6 +4,12 @@ deb {{ aptsource_uri }} {{ aptsource_suite }} {{ aptsource_components | join(" "
 {% if aptsource_sources_enabled | bool %}
 deb-src {{ aptsource_uri }} {{ aptsource_suite }} {{ aptsource_components | join(" ") }}
 {% endif %}
+{% if aptsource_debug_enabled | bool %}
+
+# https://wiki.debian.org/AutomaticDebugPackages
+# https://wiki.debian.org/DebugPackage
+deb {{ aptsource_debug_uri }} {{ aptsource_suite }}-debug {{ aptsource_components | join(" ") }}
+{% endif %}
 {% if aptsource_suite not in ('sid', 'unstable') %}
 {% if aptsource_stable_updates_enabled | bool %}
 

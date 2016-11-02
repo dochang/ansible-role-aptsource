@@ -6,6 +6,8 @@ aptsource_stable_updates_enabled: yes
 aptsource_stable_updates_uri: '{{ aptsource_uri }}'
 aptsource_backports_enabled: no
 aptsource_backports_uri: '{{ aptsource_uri }}'
+aptsource_debug_enabled: no
+aptsource_debug_uri: 'http://deb.debian.org/debian-debug'
 aptsource_suite: '{{ (ansible_distribution_release != "NA") | ternary(ansible_distribution_release, "sid") }}'
 aptsource_components:
   - main
