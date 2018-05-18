@@ -1,0 +1,43 @@
+# https://wiki.debian.org/SourcesList
+
+deb {{ aptsource_debian_uri }} {{ aptsource_debian_suite }} {{ aptsource_debian_components | join(" ") }}
+{% if aptsource_debian_sources_enabled | bool %}
+deb-src {{ aptsource_debian_uri }} {{ aptsource_debian_suite }} {{ aptsource_debian_components | join(" ") }}
+{% endif %}
+{% if aptsource_debian_debug_enabled | bool %}
+
+# https://wiki.debian.org/AutomaticDebugPackages
+# https://wiki.debian.org/DebugPackage
+deb {{ aptsource_debian_debug_uri }} {{ aptsource_debian_suite }}-debug {{ aptsource_debian_components | join(" ") }}
+{% endif %}
+{% if aptsource_debian_ports_enabled | bool %}
+
+# https://www.ports.debian.org/
+deb {{ aptsource_debian_ports_uri }} {{ aptsource_debian_ports_suite }} {{ aptsource_debian_components | join(" ") }}
+{% endif %}
+{% if aptsource_debian_suite not in ('sid', 'unstable') %}
+{% if aptsource_debian_stable_updates_enabled | bool %}
+
+# https://wiki.debian.org/StableUpdates
+#
+# {{ aptsource_debian_suite }}-updates, previously known as 'volatile'
+deb {{ aptsource_debian_stable_updates_uri }} {{ aptsource_debian_suite }}-updates {{ aptsource_debian_components | join(" ") }}
+{% if aptsource_debian_sources_enabled | bool %}
+deb-src {{ aptsource_debian_stable_updates_uri }} {{ aptsource_debian_suite }}-updates {{ aptsource_debian_components | join(" ") }}
+{% endif %}
+{% endif %}
+{% if aptsource_debian_backports_enabled | bool %}
+
+# http://backports.debian.org/
+deb {{ aptsource_debian_backports_uri }} {{ aptsource_debian_suite }}-backports {{ aptsource_debian_components | join(" ") }}
+{% if aptsource_debian_sources_enabled | bool %}
+deb-src {{ aptsource_debian_backports_uri }} {{ aptsource_debian_suite }}-backports {{ aptsource_debian_components | join(" ") }}
+{% endif %}
+{% endif %}
+
+# https://www.debian.org/security/
+deb {{ aptsource_debian_security_uri }} {{ aptsource_debian_suite }}/updates {{ aptsource_debian_components | join(" ") }}
+{% if aptsource_debian_sources_enabled | bool %}
+deb-src {{ aptsource_debian_security_uri }} {{ aptsource_debian_suite }}/updates {{ aptsource_debian_components | join(" ") }}
+{% endif %}
+{% endif %}

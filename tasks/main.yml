@@ -1,12 +1,11 @@
 ---
 - name: configure APT sources
-  template:
-    dest: /etc/apt/sources.list
-    src: etc/apt/sources.list
-    group: root
-    owner: root
-    mode: '644'
-  notify:
-    - update apt cache
+  include_tasks: '{{ item }}'
+  with_first_found:
+    - files:
+        # We use `ansible_lsb.id` instead of `ansible_distribution`, because
+        # the value of `ansible_distribution` on Raspbian is `Debian`.
+        - '{{ ansible_lsb.id }}.yml'
+        - default.yml
 
 - meta: flush_handlers

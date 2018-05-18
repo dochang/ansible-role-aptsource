@@ -1,0 +1,4 @@
+---
+- name: configure APT sources
+  fail:
+    msg: 'Not supported'

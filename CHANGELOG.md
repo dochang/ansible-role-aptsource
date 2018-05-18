@@ -2,6 +2,10 @@
 
 ## [Unreleased] ##
 
+### Changed ###
+
+  - Use dynamic include to support derivatives of Debian
+
 ## [1.0.0] - 2018-05-22 ##
 
 ### Added ###

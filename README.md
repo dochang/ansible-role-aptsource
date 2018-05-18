@@ -16,20 +16,20 @@ None
 Role Variables
 --------------
 
-  - `aptsource_uri` (default: `http://deb.debian.org/debian`)
   - `aptsource_sources_enabled` (default: `no`)
-  - `aptsource_security_uri` (default: `http://deb.debian.org/debian-security`)
-  - `aptsource_stable_updates_enabled` (default: `yes`)
-  - `aptsource_stable_updates_uri` (default: `{{ aptsource_uri }}`)
-  - `aptsource_backports_enabled` (default: `no`)
-  - `aptsource_backports_uri` (default: `{{ aptsource_uri }}`)
-  - `aptsource_debug_enabled` (default: `no`)
-  - `aptsource_debug_uri` (default: `http://deb.debian.org/debian-debug`)
-  - `aptsource_ports_enabled` (default: `no`)
-  - `aptsource_ports_uri` (default: `http://deb.debian.org/debian-ports`)
-  - `aptsource_ports_suite` (default: `{{ aptsource_suite }}`)
-  - `aptsource_suite` (default: `{{ (ansible_distribution_release != "NA") | ternary(ansible_distribution_release, "sid") }}`)
-  - `aptsource_components` (default: `[ main, contrib, non-free ]`)
+  - `aptsource_debian_uri` (default: `http://deb.debian.org/debian`)
+  - `aptsource_debian_security_uri` (default: `http://deb.debian.org/debian-security`)
+  - `aptsource_debian_stable_updates_enabled` (default: `yes`)
+  - `aptsource_debian_stable_updates_uri` (default: `{{ aptsource_debian_uri }}`)
+  - `aptsource_debian_backports_enabled` (default: `no`)
+  - `aptsource_debian_backports_uri` (default: `{{ aptsource_debian_uri }}`)
+  - `aptsource_debian_debug_enabled` (default: `no`)
+  - `aptsource_debian_debug_uri` (default: `http://deb.debian.org/debian-debug`)
+  - `aptsource_debian_ports_enabled` (default: `no`)
+  - `aptsource_debian_ports_uri` (default: `http://deb.debian.org/debian-ports`)
+  - `aptsource_debian_ports_suite` (default: `{{ aptsource_debian_suite }}`)
+  - `aptsource_debian_suite` (default: `{{ ansible_lsb.codename }}`)
+  - `aptsource_debian_components` (default: `[ main, contrib, non-free ]`)
 
 Dependencies
 ------------
@@ -42,11 +42,11 @@ Example Playbook
     - hosts: servers
       roles:
         - role: dochang.aptsource
-          aptsource_uri: http://deb.debian.org/debian
-          aptsource_backports_enabled: yes
-          aptsource_backports_uri: '{{ aptsource_uri }}'
-          aptsource_suite: sid
-          aptsource_components:
+          aptsource_debian_uri: http://deb.debian.org/debian
+          aptsource_debian_backports_enabled: yes
+          aptsource_debian_backports_uri: '{{ aptsource_debian_uri }}'
+          aptsource_debian_suite: sid
+          aptsource_debian_components:
             - main
             - contrib
             - non-free

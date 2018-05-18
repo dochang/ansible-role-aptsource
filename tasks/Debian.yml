@@ -1,0 +1,10 @@
+---
+- name: configure APT sources
+  template:
+    dest: /etc/apt/sources.list
+    src: '{{ ansible_lsb.id }}/etc/apt/sources.list'
+    group: root
+    owner: root
+    mode: '644'
+  notify:
+    - update apt cache
