@@ -30,6 +30,11 @@ Role Variables
   - `aptsource_debian_ports_suite` (default: `{{ aptsource_debian_suite }}`)
   - `aptsource_debian_suite` (default: `{{ ansible_lsb.codename }}`)
   - `aptsource_debian_components` (default: `[ main, contrib, non-free ]`)
+  - `aptsource_raspbian_uri` (default: `http://raspbian.raspberrypi.org/raspbian/`)
+  - `aptsource_raspbian_suite` (default: `{{ ansible_lsb.codename }}`)
+  - `aptsource_raspbian_components` (default: `[ main, contrib, non-free, rpi ]`)
+  - `aptsource_raspbian_raspi_uri` (default: `http://archive.raspberrypi.org/debian/`)
+  - `aptsource_raspbian_raspi_components` (default: `[ main, ui ]`)
 
 Dependencies
 ------------

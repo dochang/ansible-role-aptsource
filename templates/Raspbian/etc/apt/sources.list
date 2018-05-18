@@ -1,0 +1,4 @@
+deb {{ aptsource_raspbian_uri }} {{ aptsource_raspbian_suite }} {{ aptsource_raspbian_components | join(" ") }}
+{% if aptsource_sources_enabled | bool %}
+deb-src {{ aptsource_raspbian_uri }} {{ aptsource_raspbian_suite }} {{ aptsource_raspbian_components | join(" ") }}
+{% endif %}

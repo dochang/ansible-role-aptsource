@@ -6,6 +6,10 @@
 
   - Use dynamic include to support derivatives of Debian
 
+### Added ###
+
+  - Support Raspbian
+
 ## [1.0.0] - 2018-05-22 ##
 
 ### Added ###

@@ -18,3 +18,15 @@ aptsource_debian_components:
   - main
   - contrib
   - non-free
+
+aptsource_raspbian_uri: 'http://raspbian.raspberrypi.org/raspbian/'
+aptsource_raspbian_suite: '{{ ansible_lsb.codename }}'
+aptsource_raspbian_components:
+  - main
+  - contrib
+  - non-free
+  - rpi
+aptsource_raspbian_raspi_uri: 'http://archive.raspberrypi.org/debian/'
+aptsource_raspbian_raspi_components:
+  - main
+  - ui
