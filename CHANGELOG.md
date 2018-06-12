@@ -2,6 +2,10 @@
 
 ## [Unreleased] ##
 
+### Fixed ###
+
+  - Wrong variable in template
+
 ## [2.0.0] - 2018-05-24 ##
 
 ### Changed ###
